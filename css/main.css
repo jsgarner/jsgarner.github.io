@@ -310,7 +310,8 @@ img {
   flex-flow: column;
   align-self: auto;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
   display: flex;
   overflow: clip;
 }
@@ -318,7 +319,8 @@ img {
 .tab {
   z-index: 0;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
   display: flex;
   position: static;
   overflow: visible;
@@ -363,7 +365,8 @@ img {
   flex: 1;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
   transition: flex .4s, width .4s cubic-bezier(.86, 0, .07, 1);
   display: none;
   position: relative;
@@ -377,7 +380,8 @@ img {
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
+  min-height: -webkit-fill-available;
   display: flex;
   position: relative;
   overflow: scroll;
@@ -1888,6 +1892,8 @@ img {
     justify-content: flex-start;
     display: flex;
     overflow: visible;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
   }
 
   .tab {
@@ -1897,6 +1903,8 @@ img {
     position: relative;
     inset: 0% 0% auto;
     overflow: visible;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
   }
 
   .tab_link {
@@ -1924,7 +1932,8 @@ img {
   .tab_content {
     flex: 0 auto;
     width: 100vw;
-    height: auto;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
     position: absolute;
     overflow: hidden;
   }
@@ -1934,7 +1943,8 @@ img {
     border-bottom-width: 1px;
     border-right-width: 0;
     flex: 0 auto;
-    height: 100%;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
   }
 
   .tab-link-title {
@@ -2321,8 +2331,15 @@ img {
     inset: auto 0% 0%;
   }
 
+  .main-wrapper {
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+
   .tab {
     position: relative;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
   }
 
   .tab_link {
@@ -2338,6 +2355,8 @@ img {
 
   .tab_content, .tab-content-wrap {
     position: relative;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
   }
 
   .content-contain {
@@ -2546,25 +2565,6 @@ img {
 
   .margin-huge {
     margin: 3.5rem;
-  }
-
-  .margin-top {
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .margin-xhuge {
-    margin: 4rem;
-  }
-
-  .padding-huge {
-    padding: 3.5rem;
-  }
-
-  .padding-global {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
   }
 
   .padding-section-medium {
