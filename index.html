@@ -11,6 +11,10 @@
     <!-- Fonts optimization -->
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500;700&family=Inclusive+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/Hello-Jesse-Polaroid-1x1.avif" fetchpriority="high">
+    <link rel="preload" as="image" href="images/Icon-chevron-down.svg" fetchpriority="high">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/webflow.css">
@@ -75,7 +79,19 @@
             <div id="w-node-_2f2c76b9-cbe3-65f9-40f7-136761760802-ed2091fa" class="hello-container">
               <div id="w-node-_849beaac-a566-e2d6-6f2e-37778fab10be-ed2091fa" class="content-contain">
                 <div>
-                  <div class="profile-image"><img src="images/Hello-Jesse-Polaroid-1x1.avif" loading="lazy" sizes="(max-width: 767px) 100vw, 533.0034790039062px" alt="" class="image-circle"></div>
+                  <div class="profile-image">
+                    <img src="images/Hello-Jesse-Polaroid-1x1.avif" 
+                         srcset="images/Hello-Jesse-Polaroid-1x1-p-500.avif 500w,
+                                images/Hello-Jesse-Polaroid-1x1-p-800.avif 800w,
+                                images/Hello-Jesse-Polaroid-1x1.avif 1080w"
+                         sizes="(max-width: 767px) 30vw, 16rem"
+                         loading="eager"
+                         fetchpriority="high"
+                         width="1080" 
+                         height="1080"
+                         alt="Jesse Garner portrait photo"
+                         class="image-circle">
+                  </div>
                   <div class="spacer-medium"></div>
                   <div>
                     <div>
@@ -117,7 +133,18 @@
                 </video></div>
               <div class="spacer-xsmall"></div>
               <div id="w-node-_3bb8f68b-cb3d-6f4f-6d16-3ce4c733adad-ed2091fa" class="w-layout-layout content-grid wf-layout-layout">
-                <div class="w-layout-cell"><img src="images/Work-FF-Shampoo.avif" loading="lazy" alt="" class="image-grid"></div>
+                <div class="w-layout-cell">
+                  <img src="images/Work-FF-Shampoo.avif" 
+                       srcset="images/Work-FF-Shampoo-p-500.avif 500w,
+                               images/Work-FF-Shampoo-p-800.avif 800w,
+                               images/Work-FF-Shampoo.avif 1080w"
+                       sizes="(max-width: 767px) 100vw, 540px"
+                       loading="eager"
+                       width="1080"
+                       height="1080"
+                       alt="Formroom shampoo bottle design"
+                       class="image-grid">
+                </div>
                 <div class="w-layout-cell">
                   <div data-poster-url="videos/Garage-Door-Test-21-poster-00001.jpg" data-video-urls="videos/Garage-Door-Test-21-transcode.mp4,videos/Garage-Door-Test-21-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video _4x5 w-background-video w-background-video-atom"><video id="e8bfc151-110d-466b-33b5-afaf50c0fbb4-video" autoplay="" loop="" style="background-image:url(&quot;videos/Garage-Door-Test-21-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
                       <source src="videos/Garage-Door-Test-21-transcode.mp4" data-wf-ignore="true">
@@ -174,7 +201,14 @@
           <div class="tab-content-wrap">
             <div class="tab-header-dark">
               <h4 class="h4-hidden">Meta Quest</h4>
-              <div class="cover-logo"><img src="images/Logo-Meta-Quest-white.png" loading="lazy" sizes="100vw" alt="" class="logo"></div>
+              <div class="cover-logo">
+                <img src="images/Logo-Meta-Quest-white.png"
+                     width="240"
+                     height="48"
+                     loading="eager"
+                     alt="Meta Quest logo"
+                     class="logo">
+              </div>
               <h2 class="heading-style-h2">Beat Saber Showdown</h2>
             </div>
             <div id="w-node-e5b1f7dc-0d9d-80f2-6273-cdbe243d74c9-ed2091fa" class="content-contain">
@@ -205,12 +239,34 @@
                   <p class="paragraph-large">As the official mixed-reality headset of the NBA, Meta Quest needed a culturally plugged-in activation at NBA All-Star Weekend 2023 that went beyond demo booths—one that spoke basketball, fashion, music, and tech.</p>
                 </div>
               </div>
-            </div><img src="images/MQ-Beatsaber.webp" loading="lazy" sizes="100vw" alt="" class="image-full-width">
+            </div>
+            <img src="images/MQ-Beatsaber.avif"
+                 srcset="images/MQ-Beatsaber-p-500.avif 500w, 
+                         images/MQ-Beatsaber-p-800.avif 800w,
+                         images/MQ-Beatsaber.avif 1200w"
+                 sizes="100vw"
+                 loading="lazy"
+                 width="1200" 
+                 height="675"
+                 alt="Meta Quest Beat Saber tournament"
+                 style="aspect-ratio: 16/9; object-fit: cover;"
+                 class="image-full-width">
             <div class="content-contain">
               <h3 class="heading-style-h3">Approach</h3>
               <div id="w-node-e5b1f7dc-0d9d-80f2-6273-cdbe243d74e6-ed2091fa" class="w-layout-layout layout-approach wf-layout-layout">
                 <div class="w-layout-cell cell-approach media">
-                  <div class="approach-image-contain"><img src="images/MQ-Belt-closeup.avif" loading="lazy" sizes="(max-width: 1080px) 100vw, 1080px" alt="" class="image-rounded approach"></div>
+                  <div class="approach-image-contain">
+                    <img src="images/MQ-Belt-closeup.avif"
+                         srcset="images/MQ-Belt-closeup-p-500.avif 500w,
+                                 images/MQ-Belt-closeup-p-800.avif 800w,
+                                 images/MQ-Belt-closeup.avif 1080w"
+                         sizes="(max-width: 767px) 90vw, (max-width: 991px) 40vw, 20vw"
+                         loading="lazy"
+                         width="1080"
+                         height="1080"
+                         alt="Meta Quest championship belt closeup"
+                         class="image-rounded approach">
+                  </div>
                   <div class="approach-description">
                     <h6 class="heading-style-h6">Insight</h6>
                     <p class="paragraph-small">Basketball culture is as much about spectacle and persona as it is the game.</p>
@@ -261,7 +317,7 @@
                 </div>
                 <div id="w-node-c8105fc1-418a-0f63-82a6-bd76b91b8770-ed2091fa" class="w-layout-cell"><img src="images/MQ-Dame-IG.avif" loading="lazy" sizes="(max-width: 767px) 100vw, 704.0017700195312px" alt="" class="image-grid"></div>
                 <div class="w-layout-cell"><img src="images/MQ-Dame-hype.avif" loading="lazy" sizes="100vw" alt="" class="image-grid"></div>
-                <div class="w-layout-cell"><img src="images/MQ-Crowd.webp" loading="lazy" sizes="100vw" alt="" class="image-grid"></div>
+                <div class="w-layout-cell"><img src="images/MQ-Crowd.avif" loading="lazy" sizes="100vw" alt="" class="image-grid"></div>
                 <div id="w-node-_1165c5a5-d435-5bd1-3b37-3b0dc65c6a65-ed2091fa" class="w-layout-cell"><img src="images/MQ-Creators.avif" loading="lazy" sizes="(max-width: 991px) 100vw, 774.0017700195312px" alt="" class="image-grid"></div>
                 <div id="w-node-e5b1f7dc-0d9d-80f2-6273-cdbe243d7522-ed2091fa" class="w-layout-cell">
                   <div data-poster-url="videos/Dame-Teaser-poster-00001.jpg" data-video-urls="videos/Dame-Teaser-transcode.mp4,videos/Dame-Teaser-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video _9x16 w-background-video w-background-video-atom"><video id="e51381f4-9b04-acba-bf31-29225e6778b4-video" autoplay="" loop="" style="background-image:url(&quot;videos/Dame-Teaser-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
@@ -284,7 +340,7 @@
           <div class="tab-content-wrap">
             <div id="Nike" class="tab-header-dark nike">
               <h4 class="h4-hidden">Nike Basketball</h4>
-              <div class="cover-logo"><img src="images/Logo-NIKE-white.png" loading="lazy" sizes="100vw" alt="" class="logo"></div>
+              <div class="cover-logo"><img src="images/Logo-NIKE-white.png" loading="eager" sizes="100vw" alt="" class="logo"></div>
               <h2 class="heading-style-h2">Touch Asphalt—Always-On Social</h2>
             </div>
             <div id="w-node-_5d7823f3-b1fe-cdd1-847d-12f588ee84c2-ed2091fa" class="content-contain">
@@ -373,7 +429,7 @@
                 <source src="videos/KIPP_Cover_03_1080p-transcode.webm" data-wf-ignore="true">
               </video>
               <h4 class="h4-hidden">KIPP Public Schools Northern California</h4>
-              <div class="cover-logo"><img src="images/Logo-KIPP-white.png" loading="lazy" alt="" class="logo"></div>
+              <div class="cover-logo"><img src="images/Logo-KIPP-white.png" loading="eager" alt="" class="logo"></div>
               <h2 class="heading-style-h2">A Cohesive Story for an Education Community</h2>
             </div>
             <div id="w-node-_2f93a86a-f7ac-745a-21a9-d35c5ba1f1a1-ed2091fa" class="content-contain">
@@ -464,7 +520,7 @@
           <div class="tab-content-wrap">
             <div class="cover-light meta-ai">
               <h4 class="h4-hidden">Meta</h4>
-              <div class="cover-logo meta"><img src="images/Logo-Meta-black.png" loading="lazy" sizes="100vw" alt="" class="logo"></div>
+              <div class="cover-logo meta"><img src="images/Logo-Meta-black.png" loading="eager" sizes="100vw" alt="" class="logo"></div>
               <h2 class="heading-style-h2">Human-First AI Launch</h2>
             </div>
             <div id="w-node-_4a3d4dab-230d-92cf-91c6-614805a0e524-ed2091fa" class="content-contain">
