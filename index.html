@@ -657,16 +657,22 @@
   document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.getElementById('menuIcon');
     const navButton = document.querySelector('.w-nav-button');
+    const menuLinks = document.querySelectorAll('.tab_link-menu');
     
-    // Update icon immediately on click, before the menu animation starts
+    // Handle menu button clicks
     navButton.addEventListener('click', function() {
-      // If the menu is currently closed (doesn't have w--open class)
-      // then we're about to open it, so show the "up" chevron
       if (!this.classList.contains('w--open')) {
         menuIcon.src = 'images/Icon-chevron-up.svg';
       } else {
         menuIcon.src = 'images/Icon-chevron-down.svg';
       }
+    });
+    
+    // Handle menu link clicks
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        menuIcon.src = 'images/Icon-chevron-down.svg';
+      });
     });
   });
 </script>
