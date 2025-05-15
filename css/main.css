@@ -356,6 +356,7 @@ img {
 
 .tab_link.active:hover {
   transform: perspective(200px)perspective(50px);
+  box-shadow: none;
 }
 
 .tab_content {
