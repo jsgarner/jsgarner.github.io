@@ -1841,6 +1841,21 @@ img {
   text-transform: none;
 }
 
+.menu-icon {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon img {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Hide webflow's default menu icon */
+.w-nav-button .w-icon-nav-menu {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
   .section_header, .section_footer {
     z-index: 200;

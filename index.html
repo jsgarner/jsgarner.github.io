@@ -36,7 +36,7 @@
               <div class="menu-button w-nav-button">
                 <div class="menu-icon">
                   <h3 class="heading-nav">Jesse Garner</h3>
-                  <div class="w-icon-nav-menu"></div>
+                  <img id="menuIcon" src="images/Icon-chevron-down.svg" alt="Menu">
                 </div>
               </div>
               <nav role="navigation" class="mobile-menu w-nav-menu">
@@ -651,6 +651,22 @@
     // Initialize colors for the tab marked active on load
     $('.tab_link.active, .tab_link-menu.active').each(function () {
       applyColors($(this));
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const navButton = document.querySelector('.w-nav-button');
+    
+    // Update icon immediately on click, before the menu animation starts
+    navButton.addEventListener('click', function() {
+      // If the menu is currently closed (doesn't have w--open class)
+      // then we're about to open it, so show the "up" chevron
+      if (!this.classList.contains('w--open')) {
+        menuIcon.src = 'images/Icon-chevron-up.svg';
+      } else {
+        menuIcon.src = 'images/Icon-chevron-down.svg';
+      }
     });
   });
 </script>
