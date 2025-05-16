@@ -876,14 +876,15 @@
           menuIcon.src = 'images/Icon-chevron-down.svg';
         });
       });
+
+      // Encourage browsers to hide the address bar
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          window.scrollTo(0, 1);
+        }, 0);
+      });
     });
 
-    window.addEventListener("load", function () {
-      // slight scroll triggers collapse
-      setTimeout(function () {
-        window.scrollTo(0, 1);
-      }, 0);
-    });
 
   </script>
 </body>
