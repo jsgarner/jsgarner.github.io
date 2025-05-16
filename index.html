@@ -792,8 +792,8 @@
   <script>
     $(document).ready(function () {
       function applyColors($link) {
-        const bgColor = $link.data('color');
-        const textColor = $link.data('text');
+        const bgColor = $link.data('color') || '';
+        const textColor = $link.data('text') || '';
         $link.css({
           'background-color': bgColor,
           'color': textColor
@@ -821,10 +821,11 @@
         // Activate matching tab content
         $('.tab_content[data-tab="' + tabId + '"]').addClass('active');
         // Also activate the other corresponding tab link
-        const $matchingLinks = $('.tab_link[data-tab="' + tabId + '"], .tab_link-menu[data-tab="' + tabId + '"]');
-        $matchingLinks.addClass('active').each(function () {
-          applyColors($(this));
-        });
+        const $matchingLinks = $('.tab_link[data-tab="' + tabId + '"], .tab_link-menu[data-tab="' + tabId + '"]').not($link);
+$matchingLinks.addClass('active').each(function () {
+  applyColors($(this));
+});
+
         // Close Webflow mobile nav if open
         const $navMenu = $('.w-nav-menu');
         const $navButton = $('.w-nav-button');
@@ -854,22 +855,20 @@
       $('.tab_link.active, .tab_link-menu.active').each(function () {
         applyColors($(this));
       });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
+    
+      // Fine-tuning the mobile menu
       const menuIcon = document.getElementById('menuIcon');
       const navButton = document.querySelector('.w-nav-button');
       const menuLinks = document.querySelectorAll('.tab_link-menu');
 
       // Handle menu button clicks
-      navButton.addEventListener('click', function () {
-        if (!this.classList.contains('w--open')) {
-          menuIcon.src = 'images/Icon-chevron-up.svg';
-        } else {
-          menuIcon.src = 'images/Icon-chevron-down.svg';
-        }
-      });
-
+      if (menuIcon && navButton) {
+        navButton.addEventListener('click', function () {
+          menuIcon.src = this.classList.contains('w--open')
+            ? 'images/Icon-chevron-down.svg'
+            : 'images/Icon-chevron-up.svg';
+        });
+      }
       // Handle menu link clicks
       menuLinks.forEach(link => {
         link.addEventListener('click', function () {
