@@ -1854,6 +1854,12 @@ img {
   padding-left: 4rem;
 }
 
+.spacer-horiz-large {
+  width: auto;
+  padding-top: 0;
+  padding-left: 8rem;
+}
+
 .container-paragraph {
   display: flex;
   flex-flow: column;
@@ -1864,7 +1870,7 @@ img {
 
 .profile-image {
   width: 30vw;
-  max-width: 16rem;
+  max-width: 8rem;
   aspect-ratio: 1;
 }
 
@@ -1961,6 +1967,10 @@ img {
 
   .logo {
     max-height: 8rem;
+  }
+
+  .spacer-horiz-large {
+    padding-left: 4rem;
   }
 }
 
@@ -2383,6 +2393,7 @@ img {
   .container-flex-horiz {
     flex-flow: column;
     position: relative;
+    row-gap: 1rem;
   }
 
   .spacer-horiz-medium {
@@ -2391,7 +2402,7 @@ img {
   }
 
   .profile-image {
-    max-width: 12rem;
+    max-width: 10rem;
   }
 
   .logo-grid {
@@ -2405,6 +2416,7 @@ img {
   align-items: center;
   justify-content: center;
 }
+
 
 @media screen and (max-width: 767px) {
   .logo-grid {
@@ -2771,9 +2783,7 @@ img {
     padding-top: 1.25rem;
   }
 
-  .profile-image {
-    max-width: 10rem;
-  }
+
 
   .footer-link-h6, .footer-style-h6 {
     flex-flow: column;
