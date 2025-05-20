@@ -436,6 +436,10 @@ img {
   display: flex;
 }
 
+.content-contain.center {
+  align-items: center;
+}
+
 .background-video {
   object-fit: cover;
   object-position: 50% 0%;
@@ -1654,6 +1658,16 @@ img {
   object-fit: contain;
   object-position: 0% 50%;
   display: block;
+  max-height: 10rem;
+}
+
+.logo-grid {
+  width: 100%;;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(7, 1fr);
+
+  align-items: center;
 }
 
 .approach-image-contain {
@@ -1821,13 +1835,18 @@ img {
   flex-flow: row;
   flex: 1;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: auto;
   max-width: none;
   margin-left: 0;
   margin-right: 0;
   display: flex;
 }
+
+.container-flex-horiz.vert-center {
+  align-items: center;
+}
+
 
 .spacer-horiz-medium {
   width: auto;
@@ -1836,8 +1855,12 @@ img {
 }
 
 .container-paragraph {
+  display: flex;
+  flex-flow: column;
   max-width: 42rem;
 }
+
+
 
 .profile-image {
   width: 30vw;
@@ -1929,6 +1952,16 @@ img {
 /* Hide webflow's default menu icon */
 .w-nav-button .w-icon-nav-menu {
   display: none;
+}
+
+@media screen and (max-width:1690px) {
+  .logo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .logo {
+    max-height: 8rem;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -2360,6 +2393,24 @@ img {
   .profile-image {
     max-width: 12rem;
   }
+
+  .logo-grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.logo-grid .w-layout-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
   .container-paragraph-contact {
     text-align: center;
@@ -2862,6 +2913,9 @@ img {
     width: 90vw;
   }
 
+  .logo-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .h6-info {
     font-size: .75rem;
   }
