@@ -273,15 +273,17 @@ img {
 }
 
 .tab_content {
-  flex: 1;
+  flex: 0;
   justify-content: center;
   align-items: center;
   height: 100dvh;
   min-height: -webkit-fill-available;
-  transition: flex .4s, width .4s cubic-bezier(.86, 0, .07, 1);
-  display: none;
+  width: 0;
+  transition: flex .4s ease-in-out, width .4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  visibility: hidden;
+  white-space: nowrap; /* Prevent content wrapping during transition */
 }
 
 .tab_content.active {
@@ -291,11 +293,14 @@ img {
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
+  flex: 1;
+  width: 100%;
   height: 100dvh;
   min-height: -webkit-fill-available;
-  display: flex;
   position: relative;
   overflow: scroll;
+  visibility: visible;
+  white-space: normal; /* Restore normal text wrapping when active */
 }
 
 .tab-link-title {
@@ -311,6 +316,9 @@ img {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  min-width: calc(100vw - 14rem); /* Limit maximum width to 100vw minus tab widths */
+  max-width: calc(100vw - 14rem); /* Limit minimum width to 100vw minus tab widths */
+  flex-shrink: 0;
   height: 100%;
   margin: 0;
   padding: 0;

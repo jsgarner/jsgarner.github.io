@@ -26,6 +26,16 @@ $(document).ready(function () {
         // Activate the clicked tab link
         $link.addClass('active');
         applyColors($link);
+
+        // Handle tab content switching
+        $('.tab_content').removeClass('active');
+        const $newContent = $('.tab_content[data-tab="' + tabId + '"]');
+        
+        // Small delay to ensure smooth width transition
+        setTimeout(() => {
+          $newContent.addClass('active');
+        }, 10);
+
         // Activate matching tab content
         $('.tab_content[data-tab="' + tabId + '"]').addClass('active');
         // Also activate the other corresponding tab link
